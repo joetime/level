@@ -1,0 +1,151 @@
+
+/* Layout */
+	.level {
+		border-radius: 500px; /* larger than anything */
+		border-style: solid;
+		overflow: hidden;
+		position: relative;
+		margin: auto 
+	}	
+	/* Label */
+		.level label {
+			color: white;
+			display: block;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			font-weight: 100;
+		}
+		.level label em {
+			font-weight: bold;
+			font-style: normal;
+		}
+	/* value */
+		.level .level-value {
+			height: 500px; /* larger than anything */
+			position: absolute;
+			top: 0px; left: 0px;
+			-webkit-transition: all 1.0s ease-in-out;
+			-moz-transition: all 1.0s ease-in-out;
+			-o-transition: all 1.0s ease-in-out;
+			transition: all 1.0s ease-in-out;
+		}
+		
+	
+	
+/* Colors */
+	.level.level-default {
+		border-color: #bbb;
+		background-color: #ddd;
+	}
+		.level.level-default  .level-value {
+			background-color: #ccc;
+		}
+	.level.level-warning {
+		border-color: #eea236;
+		background-color: #f0ad4e;
+	}
+		.level.level-warning  .level-value {
+			background-color: #e09d3e;
+		}
+	.level.level-danger {
+		border-color: #d43f3a;
+		background-color: #d9534f;
+	}
+		.level.level-danger  .level-value {
+			background-color: #c9433f;
+		}
+	.level.level-primary {
+		border-color: #357ebd;
+		background-color: #428bca;
+	}
+		.level.level-primary  .level-value {
+			background-color: #327bba;
+		}
+	.level.level-info {
+		border-color: #46b8da;
+		background-color: #5bc0de;
+	}
+		.level.level-info  .level-value {
+			background-color: #4bb0ce;
+		}
+	.level.level-success {
+		border-color: #4cae4c;
+		background-color: #5cb85c;
+	}
+		.level.level-success  .level-value {
+			background-color: #4ca84c;
+		}
+	
+	
+/* Size */
+	.level {
+		width: 200px;
+		height: 200px;
+		border-width: 9px;
+	}
+		.level label {
+			font-size: 40px;	/* 20% height */
+			line-height: 40px;
+			margin-top: 70px;	/* 1/2 height - border-width - 1/2 line-height */
+		}
+		
+	.level.level-sm {
+		width: 120px;		
+		height: 120px;
+		border-width: 6px;
+	}
+		.level.level-sm label {
+			font-size: 24px;	/* 20% height */	
+			line-height: 24px;
+			margin-top: 42px;	/* 1/2 height - border-width - 1/2 line-height */
+		}
+	
+	.level.level-xs {
+		width: 80px;
+		height: 80px;
+		border-width: 4px;
+	}
+		.level.level-xs label {
+			font-size: 16px;	/* 20% height */	
+			line-height: 16px;
+			margin-top: 28px;	/* 1/2 height - border-width - 1/2 line-height */
+		}
+	
+	.level.level-xl {
+		width: 350px;
+		height: 350px;
+		border-width: 10px;
+	}
+		.level.level-xl label {
+			font-size: 70px;	/* 20% height */	
+			line-height: 70px;
+			margin-top: 135px;	/* 1/2 height - border-width - 1/2 line-height */
+		}
+	.level.level-lg {
+		width: 280px;
+		height: 280px;
+		border-width: 10px;
+	}
+		.level.level-lg label {
+			font-size: 56px;	/* 20% height */	
+			line-height: 56px;
+			margin-top: 102px;	/* 1/2 height - border-width - 1/2 line-height */
+		}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

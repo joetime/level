@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>level Demo</title>
+
+    <!-- Bootstrap -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="level.css" rel="stylesheet" />
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style>
+		pre { margin-top: 20px; }
+		.row { padding: 50px 50px; border-bottom: 1px dotted #ddd; }
+		.inverse { color: white; background-color: #f0ad4e; border: none; }
+		.inverse a { color: #effeef; }
+	</style>
+  </head>
+  <body>
+  <div class="jumbotron inverse">
+	  <h1>level</h1>
+	  <p>An interesting take on the single-value pie chart.<br/>Totally ripped off from <a href="http://levelmoney.com">LevelMoney</a>.</p>
+	  <p>It requires jQuery.</p>
+	  <p><a class="btn btn-success btn-lg" role="button">It's on GitHub</a></p>
+	</div>
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<h2>Most basic usage:</h2>
+				<pre>&lt;div class="level level-default" data-value="47"&gt;&lt;/div&gt;</pre>
+				<p>
+				use <code>data-value</code> to set the percentage you want. <b>level</b> automagically adds the label and percent sign for you!
+				</p>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<div class="level level-default" data-value="47"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<h2>Custom labels:<br><small>...with appendages (pre and post)</small></h2>
+				<pre>&lt;div class="level level-default" data-value="205" data-post=".26" data-pre="$"&gt;&lt;div&gt;</pre>
+				<p>
+				use <code>data-label</code>,<code>data-pre</code>, and <code>data-post</code> for more-prettyer labels.
+				</p>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<div class="level level-warning" data-value="77" data-label="205" data-pre="$" data-post=".26"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<h2>Colors:<br><small>...ooooooh pretty...</small></h2>
+				<p>
+				Add one of these classes to your level:
+				</p>
+				<pre>level-default<br/>level-warning<br/>level-success<br/>level-danger<br/>level-info<br/>level-primary</pre>
+				
+			</div>
+			<div class="col-sm-6 col-xs-12 text-muted">
+				<ul class="list-unstyled list-inline text-center">	
+					<li><div class="level level-xs level-success" data-value="76"></div>
+					level-success
+					</li>
+				</ul>
+				<ul class="list-unstyled list-inline text-center">
+					<li><div class="level level-xs level-warning" data-value="24"></div>
+					level-warning</li>
+					<li><div class="level level-xs level-default" data-value="56"></div>
+					level-default</li>
+					<li><div class="level level-xs level-danger" data-value="18"></div>
+					level-danger</li>
+				</ul>
+				<ul class="list-inline text-center">
+					<li><div class="level level-xs level-info" data-value="98"></div>
+					level-info</li>
+					<li><div class="level level-xs level-primary" data-value="42"></div>
+					level-primary</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div col-xs-12" style="position:relative">
+				<h2>Size<br/><small>...make it bigger. Or smaller.</small></h2>
+				<p>Add one of these classes to your level:</p>
+				<div class="level level-xs level-success" data-value="35" data-pre="level-" data-label="xs" style="float:left;margin-right:-10px"></div>
+				<div class="level level-sm level-info" data-value="55" data-pre="level-" data-label="sm" style="float:left;margin-right:-20px"></div>
+				<div class="level level-warning" data-value="40" data-pre="(default)" data-label="" style="float:left;margin-right:-45px"></div>
+				<div class="level level-lg level-primary" data-value="84" data-pre="level-" data-label="lg" style="float:left;margin-right:-50px"></div>
+				<div class="level level-xl level-info" data-value="18" data-pre="level-" data-label="xl" style="float:left;margin-right:-60px"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-10 col-xs-12">
+				<h2>Border<br/><small>...to border or not to border</small></h2>
+				<pre>&lt;div class="level level-sm level-warning" data-value="50" data-label="yes"&gt;&lt;/div&gt;</br>&lt;div class="level level-sm evul-warning" data-no-border data-label="no" data-value="50"&gt;&lt;/div&gt;</pre>
+				Use the <code>data-no-border</code> attribute to turn off borders.
+			</div>
+			<div class="col-sm-2 col-xs-12">
+				<ul class="list-inline">
+					<li><div class="level level-sm level-warning" data-value="50" data-label="yes"></div></li>
+					<li><div class="level level-sm level-warning" data-no-border data-label="no" data-value="50"></div></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="row inverse">
+			<div class="col-xs-12">
+				<h1> Here are a bunch of examples...</h1>
+			</div>
+		</div>
+		
+		<!-- examples -->
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<div class="level level-default" data-value="50" data-post=".26" data-pre="$"></div>
+			</div>
+			<div class="col-sm-6">
+				<h3>Default</h3>
+				<pre>class="level level-default"<br/>data-value="50"<br/>data-post=".26"<br/>data-pre="$"</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				
+				<div class="level level-danger level-sm" data-value="30"></div>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<h3>Small, Danger</h3>
+				<pre>class="level level-danger level-sm"</br>data-value="30"</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<div class="level level-info level-xs" data-value="60"></div>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<h3>Info, X-Small</h3>
+				<pre>class="level level-info level-xs"<br/>data-value="60"</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<div class="level level-success" data-value="60" data-label="OK" data-post="!" data-no-border>
+				</div>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<h3>Success, no border</h3>
+				<pre>class="level level-success"<br/>data-value="60"<br/>data-label="OK"<br/>data-post="!" data-no-border</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<div class="level level-warning level-lg" data-value="20" data-post="%">
+				</div>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+			<h3>Large, Warning</h3>
+			<pre>class="level level-warning level-lg" data-value="20" data-post="%"</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<div class="level level-primary level-xl" data-value="80">
+				</div>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<h3>Primary, X-large</h3>
+				<pre>class="level level-primary level-xl" data-value="80"</pre>
+			</div>
+		</div>
+		<div class="row inverse">
+			level is a joetime creation
+		</div>
+	</div>
+		
+	
+	
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="level.js"></script>
+  </body>
+</html>
