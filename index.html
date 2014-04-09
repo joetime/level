@@ -21,16 +21,36 @@
 		.row { padding: 50px 50px; border-bottom: 1px dotted #ddd; }
 		.inverse { color: white; background-color: #f0ad4e; border: none; }
 		.inverse a { color: #effeef; }
+		.list-squash li { margin: -30px; }
 	</style>
   </head>
   <body>
-  <div class="jumbotron inverse">
-	  <h1>level</h1>
-	  <p>An interesting take on the single-value pie chart.<br/>Totally ripped off from <a href="http://levelmoney.com">LevelMoney</a>.</p>
-	  <p>It requires jQuery.</p>
-	  <p><a class="btn btn-success btn-lg" role="button">It's on GitHub</a></p>
+	<div class="container-fluid">
+		<div class="row jumbotron inverse">
+			<div class="col-md-6 col-sm-12">
+				<h1>level</h1>
+				<p>An interesting take on the single-value pie chart.<br/>Totally ripped off from <a href="http://levelmoney.com">LevelMoney</a>.</p>
+				<p>It requires jQuery.</p>
+				<p><a class="btn btn-success btn-lg" role="button">It's on GitHub</a></p>
+			</div>
+		<div class="col-md-6 col-sm-12">
+			<div class="level level-lg level-info" data-value="47"></div>
+		</div>
 	</div>
-    <div class="container-fluid">
+    
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class="list-inline list-squash">
+					<li><div class="level level-xl level-success" data-value="67" 
+						data-label="456" data-pre="$" data-post=".65"></div></li>
+					<li><div class="level level-sm level-default" data-value="78" data-label="Ok"></div></li>
+					<li><div class="level level-lg level-warning" data-value="18"></div></li>
+					<li><div class="level          level-danger" data-value="5" data-label="!"></div></li>
+					<li><div class="level level-xs level-primary" data-value="32" data-label="Gas"></div></li>
+				</ul>
+			</div>
+		</div>
+		
 		<div class="row">
 			<div class="col-sm-6 col-xs-12">
 				<h2>Most basic usage:</h2>
@@ -181,10 +201,7 @@
 			level is a joetime creation
 		</div>
 	</div>
-		
 	
-	
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
