@@ -1,3 +1,30 @@
+/*
+<div class="level level-default level-lg" data-value="205" data-post=".26" data-pre="$"><div>
+
+	The javascript inserts two two elements... 
+	
+	<div class="level-value">		// div for the dark-colored level.
+		<label>...</label>			// text
+	</div>
+
+	The height of level-value is set to the percentage.
+	The label is offset (negative) to compensate for the height of the level-value
+
+	classes
+	-------
+	level			The main hook
+	level-default	Color scheme (level-warning, -danger, -info, etc.)
+	level-lg		Size (xs, sm, lg, xl). No size specified is default (medium)
+
+	
+	attributes
+	----------
+	data-value		The value for the pie chart, base 100.
+					This also becomes the label if none is specified.
+	data-pre		Text to append to the front of the main label
+	data-post		Text to append to the end of the main label
+	data-no-border	A flag for eliminating the border of the circle
+*/
 $(document).ready(function() {
 	$(".level").each(function() {
 		
@@ -6,7 +33,7 @@ $(document).ready(function() {
 		var val = $(this).attr("data-value");
 		var noBorder = $(this).attr("data-no-border");
 		
-	// Calculations...
+	// Calculate the height of the level
 		var levelHeight = height - (val/100 * height);
 		var labelHeight = levelHeight;
 		
@@ -24,7 +51,7 @@ $(document).ready(function() {
 		var label = pre + "<em>" + label + "</em>" + post;
 		var labelhtml = "<label style='position: relative; top:-" + labelHeight + "px; left: 0;'>" + label + "</label>";
 	
-	// <span>.level-value
+	// span.level-value
 		var spanhtml = "<span class='level-value'>" + labelhtml + "</span>";
 		
 	// No border?
@@ -38,17 +65,13 @@ $(document).ready(function() {
 	// Append HTML
 		$(this).append(spanhtml);
 		
+	// Find new div and set height
 		var valuediv = $(this).children('.level-value');
-		// set height
-		//valuediv.height(height)
-		console.log(height, noBorderAdjust)
 		valuediv.width(height + noBorderAdjust)
 		
 	// change offset (animate)
 		var offset = valuediv.offset();
-		//offset.left += borderWidth;
 		offset.top += levelHeight;
 		valuediv.offset(offset);
-		
 	});
 });
